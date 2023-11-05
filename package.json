@@ -1,0 +1,27 @@
+{
+  "name": "adviser",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "lint:fix": "eslint --ext .cjs,.ts,.tsx . --fix",
+    "format": "prettier --write \"(client|server)/src/**/*.{js,jsx,ts,tsx,css,md}\" --config ./.prettierrc.json"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8",
+    "lint-staged": "^15.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "client/src/**/*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix"
+    ],
+    "client/src/**/*.{js,jsx,ts,tsx,css,scss,md}": [
+      "npm run format"
+    ]
+  }
+}

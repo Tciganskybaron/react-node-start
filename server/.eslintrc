@@ -1,0 +1,44 @@
+ {
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+		"airbnb",
+		"airbnb-typescript",
+    "plugin:prettier/recommended",
+    "prettier",
+    "eslint:recommended",
+		"plugin:node/recommended"
+  ],
+  "plugins": ["@typescript-eslint"],
+  "parserOptions": {
+    "ecmaVersion": 2022,
+    "sourceType": "module",
+    "project": ["server/tsconfig.json"]
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+		"@typescript-eslint/no-require-imports": "error",
+    "no-var": "error",
+    "semi": ["error", "always", { "omitLastInOneLineBlock": false }],
+    "indent": ["error", "tab"],
+    "no-multi-spaces": "error",
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error",
+		"prettier/prettier": [
+			"error",
+			{
+					"parser": "typescript",
+          "semi": true,
+	        "endOfLine": "auto",
+          "trailingComma": "none",
+	        "useTabs": true,
+          "singleQuote": true,
+          "printWidth": 90,
+          "tabWidth": 2
+			}
+		]
+  }
+}
